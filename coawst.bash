@@ -129,7 +129,7 @@ export   ROMS_APPLICATION=${COAWST_APPLICATION}
 
 # Set a local environmental variable to define the path to the directories
 # where all this project's files are kept.
-export   MY_ROOT_DIR=/Users/hetl729/COAWST
+export   MY_ROOT_DIR=/media/iulian/ExtraDrive1/ROMS/COAWST
 export   MY_PROJECT_DIR=${MY_ROOT_DIR}
 
 # The path to the user's local current ROMS source code.
@@ -161,7 +161,7 @@ export   WWATCH_ENV=${COAWST_WW3_DIR}/wwatch.env
 # 4) NETCDF_CONFIG is needed by WW3. You need to set this:
 #export   NETCDF_CONFIG=${NETCDF_LIBDIR}/../bin/nc-config
 #    This may require nf-config, depending on your system.
-export   NETCDF_CONFIG=/usr/bin/nf-config
+export   NETCDF_CONFIG=/home/iulian/Spack/netcdf-fortran/4.5.4/gcc/ud7nocs/bin/nf-config
 #export   NETCDF_CONFIG=/vortexfs1/apps/impistack-1.0/bin/nf-config
 #
 # 5) WW3_SWITCH_FILE is like cpp options for WW3. You need to create it and
@@ -204,8 +204,8 @@ export   NETCDF_CONFIG=/usr/bin/nf-config
  export           USE_MPI=              # distributed-memory parallelism
  export        USE_MPIF90=              # compile with mpif90 script
 #export         which_MPI=mpich         # compile with MPICH library
-#export         which_MPI=mpich2        # compile with MPICH2 library
- export         which_MPI=openmpi       # compile with OpenMPI library
+export         which_MPI=mpich2        # compile with MPICH2 library
+# export         which_MPI=openmpi       # compile with OpenMPI library
 
 #export        USE_OpenMP=on            # shared-memory parallelism
 
@@ -256,7 +256,7 @@ if [ -n "${USE_MPIF90:+1}" ]; then
 
     gfortran )
       if [ "${which_MPI}" = "mpich2" ]; then
-        export PATH=/opt/gfortransoft/mpich2/bin:$PATH
+        export PATH=/home/iulian/Spack/mpich/4.0.2/gcc/gdetxb2/bin:$PATH
       elif [ "${which_MPI}" = "openmpi" ]; then
         export PATH=/opt/gfortransoft/openmpi/bin:$PATH
       fi
